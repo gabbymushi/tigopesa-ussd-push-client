@@ -3,6 +3,7 @@
 
 /* dependencies */
 const request = require('request');
+const querystring = require('querystring');
 
 /* request authorization token from tigo */
 function getToken() {
