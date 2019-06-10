@@ -22,7 +22,7 @@ function getToken() {
             'Cache-Control': 'no-cache',
 
         },
-        body: body
+        body: querystring.stringify(body)
     };
 
     /*Make a request */
@@ -30,6 +30,7 @@ function getToken() {
         if (error) {
          return false
         }
+        return body.data.access_token;
     })
 
 
