@@ -1,0 +1,29 @@
+{
+  "name": "tigopesa-ussd-push-client",
+  "version": "1.0.0",
+  "description": "This enables a user to use tigo pesa ussd push service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabbymushi/tigopesa-ussd-push-client.git"
+  },
+  "keywords": [
+    "tigo",
+    "tigopesa",
+    "tigopesa ussd push",
+    "ussd",
+    "push"
+  ],
+  "author": "gabbymushi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabbymushi/tigopesa-ussd-push-client/issues"
+  },
+  "homepage": "https://github.com/gabbymushi/tigopesa-ussd-push-client#readme",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}
