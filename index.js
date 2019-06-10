@@ -37,6 +37,7 @@ const getToken =()=> {
         /*request token*/
         const token =getToken();
         const requestOptions = {
+            url:'http://accessgwtest.tigo.co.tz:8080/PFIXERS2DM-PushBillpay',
             headers: {
                 'Content-Type': 'application/json',
                 'Cache-Control': 'no-cache',
