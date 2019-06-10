@@ -26,7 +26,7 @@ const getToken =()=> {
     };
 
     /*Make a request */
-    request(options, function (error, response, body) {
+    return request(options, function (error, response, body) {
         if (error) {
          return false
         }
