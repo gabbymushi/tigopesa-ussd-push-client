@@ -34,7 +34,18 @@ const getToken =()=> {
     })
 
     const charge =(options,done)=> {
+        /*request token*/
         const token =getToken();
+        const requestOptions = {
+            headers: {
+                'Content-Type': 'application/json',
+                'Cache-Control': 'no-cache',
+                Authorization: 'bearer ' + token,
+                Username: 'PFixers',
+                Password: 'y62QXLn'
+    
+            }
+        };
     }
 
 }
