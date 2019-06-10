@@ -6,7 +6,7 @@ const request = require('request');
 const querystring = require('querystring');
 
 /* request authorization token from tigo */
-function getToken() {
+const getToken =()=> {
     /*Prepare request body */
     const body = {
         username: 'PFixers',
