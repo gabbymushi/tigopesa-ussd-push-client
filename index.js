@@ -34,7 +34,7 @@ const getToken =()=> {
     })
 
     const charge =(options,done)=> {
-
+        const token =getToken();
     }
 
 }
