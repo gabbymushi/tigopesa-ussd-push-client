@@ -24,6 +24,6 @@
   },
   "homepage": "https://github.com/gabbymushi/tigopesa-ussd-push-client#readme",
   "dependencies": {
-    "express": "^4.17.1"
+   
   }
 }
