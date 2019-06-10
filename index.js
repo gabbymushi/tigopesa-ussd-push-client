@@ -36,6 +36,14 @@ const getToken =()=> {
     const charge =(options,done)=> {
         /*request token*/
         const token =getToken();
+        /*prepare body*/
+        const body = {
+            CustomerMSISDN: options.mobile,
+            BillerMSISDN: options.number,
+            Amount: options.amount,
+            Remarks: options.description,
+            ReferenceID: options.reference,
+          };
         const requestOptions = {
             url:'http://accessgwtest.tigo.co.tz:8080/PFIXERS2DM-PushBillpay',
             headers: {
@@ -45,9 +53,10 @@ const getToken =()=> {
                 Username: 'PFixers',
                 Password: 'y62QXLn'
     
-            }
+            },
+            body:body
         };
     }
 
 }
-
+module.exports= exports = {charge,getToken}
