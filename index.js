@@ -8,6 +8,7 @@ const request = require('request');
 function getToken() {
     /*Prepare request options */
     const options = {
+        url : 'http://accessgwtest.tigo.co.tz:8080/PFIXERS2DM-GetToken',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
             'Cache-Control': 'no-cache',
@@ -20,6 +21,7 @@ function getToken() {
         password: 'y62QXLn',
         grant_type: 'password'
     };
+
 
 
 }
