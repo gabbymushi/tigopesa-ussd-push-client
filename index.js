@@ -4,6 +4,7 @@
 /* dependencies */
 const request = require('request');
 const querystring = require('querystring');
+const { waterfall } = require('async');
 
 /* request authorization token from tigo */
 const getToken = () => {
