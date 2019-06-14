@@ -4,7 +4,7 @@
   "description": "This enables a user to use tigo pesa ussd push service",
   "main": "index.js",
   "scripts": {
-    "test": "mocha index.test.js -w"
+    "test": "mocha index.test.js --exit"
   },
   "repository": {
     "type": "git",
