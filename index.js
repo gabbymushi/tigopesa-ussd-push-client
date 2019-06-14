@@ -24,7 +24,7 @@ const getToken = () => {
         form: body
     };
 
-    /*Make a requests */
+    /*Make a request */
     return new Promise(function (resolve, reject) {
         request(options, function (error, response, body) {
             if (!error && response.statusCode == 200) {
