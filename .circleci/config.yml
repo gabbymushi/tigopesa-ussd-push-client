@@ -15,7 +15,9 @@ jobs:
       # - image: circleci/mongo:3.4.4
 
     working_directory: ~/tigopesa-ussd-push-client
-
+    branches:
+      only:
+        - develop
     steps:
       - checkout
 
