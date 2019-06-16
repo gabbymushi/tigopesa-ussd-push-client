@@ -19,6 +19,13 @@ const country = 'TZ';
 const provider = 'Tigo';
 
 
+/**
+ * @name method
+ * @description Human readable supported method of a payment.
+ */
+const method = 'Mobile Money';
+
+
 
 /* request authorization token from tigo */
 const getToken = () => {
