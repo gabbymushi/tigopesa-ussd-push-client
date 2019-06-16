@@ -67,6 +67,26 @@ const withDefaults = optns => {
     options.businessNumber = (options.number || options.businessNumber);
     return options;
 };
+/* A function to return gatewy info */
+const info = optns => {
+    // merge overrides with defauls
+    const {
+        businessNumber: number,
+        username,
+        password,
+        grant_type,
+        loginUrl,
+        billUrl,
+    } = withDefaults(optns);
+
+    // pack normalized information
+    const business = { number, username, password, grant_type, loginUrl, billUrl };
+    const meta = { country, provider, method, channel, mode, currency, gateway };
+    const details = _.merge({}, meta, business);
+
+    // return normalized client information
+    return details;
+};
 /* request authorization token from tigo */
 const getToken = () => {
     /*Prepare request body */
