@@ -119,6 +119,8 @@ const login = (loginOptions) => {
         });
     });
 };
+
+/*A function to payments to tigo */
 async function charge(options, done) {
     console.log('test', options);
     const username = options.username;
