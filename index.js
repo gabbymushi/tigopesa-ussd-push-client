@@ -40,6 +40,12 @@ const channel = 'TIGOPESA';
 const mode = 'USSD Push';
 
 
+/**
+ * @name currency
+ * @description Currency accepted for payment.
+ */
+const currency = 'TZS';
+
 
 /* request authorization token from tigo */
 const getToken = () => {
