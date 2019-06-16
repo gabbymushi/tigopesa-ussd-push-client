@@ -33,6 +33,13 @@ const method = 'Mobile Money';
 const channel = 'TIGOPESA';
 
 
+/**
+ * @name mode
+ * @description Human readable supported mode of a payment.
+ */
+const mode = 'USSD Push';
+
+
 
 /* request authorization token from tigo */
 const getToken = () => {
