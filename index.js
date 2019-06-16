@@ -120,24 +120,32 @@ const login = (loginOptions) => {
     });
 };
 async function charge(options, done) {
+    console.log('test', options);
+    const username = options.username;
+    const password = options.password;
+    const grant_type = options.grant_type;
+    const loginUrl = options.loginUrl;
+    const loginOptions = { username, password, grant_type, loginUrl };
+    const { billUrl, businessNumber } = withDefaults(options);
+    // console.log('test', withDefaults(options));
     /*request token*/
-    const token = JSON.parse(await getToken()).access_token;
+    const token = JSON.parse(await login(loginOptions)).access_token;
     const body = {
         CustomerMSISDN: options.msisdn,
-        BillerMSISDN: options.businessNumber,
+        BillerMSISDN: businessNumber,
         Amount: options.amount,
-        // Remarks: options.description,
+        Remarks: options.description,
         ReferenceID: options.reference,
     };
     const requestOptions = {
-        url: 'http://accessgwtest.tigo.co.tz:8080/PFIXERS2DM-PushBillpay',
+        url: billUrl,
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
             'Cache-Control': 'no-cache',
             Authorization: 'bearer ' + token,
-            Username: 'PFixers',
-            Password: 'y62QXLn'
+            Username: username,
+            Password: password
 
         },
         body: body,
@@ -146,7 +154,17 @@ async function charge(options, done) {
     };
     /*Make a request */
     return request(requestOptions, function (error, response, body) {
-        return done(error, body);
-    })
+        console.log('body', body);
+        const feedback = {
+            reference: body.ReferenceID,
+            status: (body.ResponseStatus ? 'processed' : 'failed'),
+            result: {
+                code: body.ResponseCode,
+                description: body.ResponseDescription
+            }
+        };
+        console.log('feedback', feedback);
+        return done(error, feedback);
+    });
 }
 module.exports = exports = { charge, getToken }
