@@ -26,6 +26,13 @@ const provider = 'Tigo';
 const method = 'Mobile Money';
 
 
+/**
+ * @name channel
+ * @description Human readable supported channel of a payment.
+ */
+const channel = 'TIGOPESA';
+
+
 
 /* request authorization token from tigo */
 const getToken = () => {
