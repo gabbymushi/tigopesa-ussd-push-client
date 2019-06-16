@@ -12,6 +12,14 @@ const _ = require('lodash');
 const country = 'TZ';
 
 
+/**
+ * @name provider
+ * @description Human readable name of a payment processing entity.
+ */
+const provider = 'Tigo';
+
+
+
 /* request authorization token from tigo */
 const getToken = () => {
     /*Prepare request body */
