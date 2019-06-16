@@ -3,6 +3,7 @@
 
 /* dependencies */
 const request = require('request');
+const _ = require('lodash');
 
 /* request authorization token from tigo */
 const getToken = () => {
