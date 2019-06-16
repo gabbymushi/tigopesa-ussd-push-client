@@ -88,16 +88,17 @@ const info = optns => {
     return details;
 };
 /* request authorization token from tigo */
-const login = () => {
+const login = (loginOptions) => {
     /*Prepare request body */
+    const { username, password, grant_type, loginUrl } = withDefaults(loginOptions);
     const body = {
-        username: 'PFixers',
-        password: 'y62QXLn',
-        grant_type: 'password'
+        username: username,
+        password: password,
+        grant_type: grant_type
     };
     /*Prepare request options */
     const options = {
-        url: 'http://accessgwtest.tigo.co.tz:8080/PFIXERS2DM-GetToken',
+        url: loginUrl,
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -107,17 +108,17 @@ const login = () => {
         form: body
     };
 
-    /*Make a requests */
+    /*Make a request */
     return new Promise(function (resolve, reject) {
         request(options, function (error, response, body) {
-            if (!error && response.statusCode == 200) {
+            if (!error && response.statusCode === 200) {
                 resolve(body);
             } else {
                 reject(error);
             }
-        })
+        });
     });
-}
+};
 async function charge(options, done) {
     /*request token*/
     const token = JSON.parse(await getToken()).access_token;
