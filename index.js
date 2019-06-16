@@ -88,7 +88,7 @@ const info = optns => {
     return details;
 };
 /* request authorization token from tigo */
-const getToken = () => {
+const login = () => {
     /*Prepare request body */
     const body = {
         username: 'PFixers',
