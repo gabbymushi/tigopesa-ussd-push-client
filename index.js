@@ -47,6 +47,12 @@ const mode = 'USSD Push';
 const currency = 'TZS';
 
 
+/**
+ * @name gateway
+ * @description Machine readable name of a client as gateway.
+ */
+const gateway = _.toLower(`${country}-${channel}-${_.kebabCase(mode)}`);
+
 /* request authorization token from tigo */
 const getToken = () => {
     /*Prepare request body */
