@@ -167,4 +167,4 @@ async function charge(options, done) {
         return done(error, feedback);
     });
 }
-module.exports = exports = { charge, login }
+module.exports = exports = { charge, login, info }
