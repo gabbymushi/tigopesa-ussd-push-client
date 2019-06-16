@@ -53,6 +53,20 @@ const currency = 'TZS';
  */
 const gateway = _.toLower(`${country}-${channel}-${_.kebabCase(mode)}`);
 
+/* A function which returns default parameters*/
+const withDefaults = optns => {
+    let options = _.merge({}, {
+        businessNumber: '',
+        username: '',
+        password: '',
+        grant_type: '',
+        loginUrl: '',
+        billUrl: ''
+    }, optns);
+    // ensure business number
+    options.businessNumber = (options.number || options.businessNumber);
+    return options;
+};
 /* request authorization token from tigo */
 const getToken = () => {
     /*Prepare request body */
