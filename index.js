@@ -5,6 +5,13 @@
 const request = require('request');
 const _ = require('lodash');
 
+/**
+ * @name country
+ * @description Human readable country code of a payment processing entity.
+ */
+const country = 'TZ';
+
+
 /* request authorization token from tigo */
 const getToken = () => {
     /*Prepare request body */
