@@ -129,7 +129,6 @@ async function charge(options, done) {
     const loginUrl = options.loginUrl;
     const loginOptions = { username, password, grant_type, loginUrl };
     const { billUrl, businessNumber } = withDefaults(options);
-    // console.log('test', withDefaults(options));
     /*request token*/
     const token = JSON.parse(await login(loginOptions)).access_token;
     const body = {
@@ -165,7 +164,6 @@ async function charge(options, done) {
                 description: body.ResponseDescription
             }
         };
-        console.log('feedback', feedback);
         return done(error, feedback);
     });
 }
