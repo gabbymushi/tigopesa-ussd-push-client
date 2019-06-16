@@ -1,5 +1,5 @@
 {
-  "name": "tigopesa-ussd-push-client",
+  "name": "tz-tigopesa-ussd-push",
   "version": "1.0.0",
   "description": "This enables a user to use tigo pesa ussd push service",
   "main": "index.js",
@@ -26,6 +26,7 @@
   "dependencies": {
     "request": "^2.88.0",
     "chai": "^4.2.0",
-    "mocha": "^6.1.4"
+    "mocha": "^6.1.4",
+    
   }
 }
