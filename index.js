@@ -56,12 +56,12 @@ const gateway = _.toLower(`${country}-${channel}-${_.kebabCase(mode)}`);
 /* A function which returns default parameters*/
 const withDefaults = optns => {
     let options = _.merge({}, {
-        businessNumber: '',
-        username: '',
-        password: '',
-        grant_type: '',
-        loginUrl: '',
-        billUrl: ''
+        businessNumber: process.env.TZ_TIGOPESA_USSD_PUSH_BUSINESS_NUMBER,
+        username: process.env.TZ_TIGOPESA_USSD_PUSH_USERNAME,
+        password: process.env.TZ_TIGOPESA_USSD_PUSH_PASSWORD,
+        grant_type: process.env.TZ_TIGOPESA_USSD_PUSH_GRANT_TYPE,
+        loginUrl: process.env.TZ_TIGOPESA_USSD_PUSH_LOGIN_URL,
+        billUrl: process.env.TZ_TIGOPESA_USSD_PUSH_BILL_URL
     }, optns);
     // ensure business number
     options.businessNumber = (options.number || options.businessNumber);
