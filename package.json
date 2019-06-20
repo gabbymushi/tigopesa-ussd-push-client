@@ -1,6 +1,6 @@
 {
   "name": "tz-tigopesa-ussd-push",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This enables a user to use tigo pesa ussd push service",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "ussd",
     "push"
   ],
-  "author": "gabbymushi",
+  "author": "gabrielpatrickmushi@gmail.com",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/gabbymushi/tigopesa-ussd-push-client/issues"
