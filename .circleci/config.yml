@@ -44,10 +44,10 @@ workflows:
   version: 2
   build-and-test:
     jobs:
-      -checkout_code
-      -build:
-        requires:
-          -checkout_code
-      -run_test:
-        requires:
-          -build
+      - checkout_code
+      - build:
+          requires:
+            - checkout_code
+      - run_test:
+          requires:
+            - build
