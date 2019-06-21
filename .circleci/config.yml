@@ -19,7 +19,6 @@ jobs:
       only:
         - develop
         - /rc-.*/
-  checkout_code:
     steps:
       - checkout
 
@@ -30,24 +29,16 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      - run: npm install
+      - run: 
+          name: Install dependencies
+          command: npm install
 
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-  run_test:
-      # run tests!
-      - run: npm test
 
-workflows:
-  version: 2
-  build-and-test:
-    jobs:
-      - checkout_code
-      - build:
-          requires:
-            - checkout_code
-      - run_test:
-          requires:
-            - build
+      # run tests!
+      - run: 
+          name: Test build
+          command: npm test
