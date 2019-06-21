@@ -44,6 +44,9 @@ workflows:
   version: 2
   build-and-test:
     jobs:
-      -build
-      -checkout_code
-      -run_test
+      -build:
+        requires:
+          -checkout_code
+      -run_test:
+        requires:
+          -build
