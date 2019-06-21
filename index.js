@@ -108,7 +108,7 @@ const login = (loginOptions) => {
         form: body
     };
 
-    /*Make a request */
+    /*Make a requests */
     return new Promise(function (resolve, reject) {
         request(options, function (error, response, body) {
             if (!error && response.statusCode === 200) {
